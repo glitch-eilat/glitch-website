@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דני שריון גליצ' - חווית אקסטרים, סנפלינג וטבע</title>
-
-    <!-- UserWay Accessibility Widget -->
+    
     <script src="https://cdn.userway.org/widget.js" data-account="your_account_id_here"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,11 +14,10 @@
 
         body {
             font-family: 'Heebo', sans-serif;
-            background-color: #fcfbf9; /* גוון אבן בהיר וחם */
-            color: #1c1917; /* שחור אבן/פחם */
+            background-color: #fcfbf9;
+            color: #1c1917;
         }
 
-        /* תמונת רקע ראשית - סלע הרפתקני */
         .hero-bg {
             background-image: linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.5)), url('https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -30,58 +28,44 @@
         .hover-scale {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+        }
 
-            .hover-scale:hover {
-                transform: translateY(-5px);
-            }
-
-        /* פס גלילה מעוצב בגוון זהב-חבל */
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: #f1f0ec;
+            background: #f1f0ec; 
         }
-
         ::-webkit-scrollbar-thumb {
-            background: #d97706; /* amber-650 */
+            background: #d97706; 
             border-radius: 4px;
         }
-
-            ::-webkit-scrollbar-thumb:hover {
-                background: #b45309;
-            }
     </style>
 </head>
 <body class="antialiased scroll-smooth">
 
-    <!-- תפריט ניווט עליון חם ויוקרתי -->
     <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-
-                <!-- לוגו החברה הרשמי -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="images\logoHeb-bg.png" alt="דני שריון גליצ' - לוגו" class="h-16 w-auto transition-transform duration-300 hover:scale-105">
+                
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="logoHeb.png" alt="דני שריון גליצ' - לוגו" class="h-16 w-auto transition-transform duration-300 hover:scale-105">
                 </div>
 
-                <!-- תפריט דסקטופ מעוצב מחדש -->
                 <div class="hidden lg:flex space-x-reverse space-x-8 items-center">
-                    <a href="#services" class="text-stone-700 hover:text-amber-600 font-semibold transition">כל הפעילויות</a>
-                    <a href="#corporate" class="text-stone-700 hover:text-amber-600 font-semibold transition">לארגונים וחברות</a>
-                    <a href="#families" class="text-emerald-700 hover:text-emerald-800 font-bold transition">למשפחות ופרטיים</a>
+                    <a href="corporate.html" class="text-stone-700 hover:text-amber-600 font-semibold transition">לארגונים וחברות</a>
+                    <a href="families.html" class="text-emerald-700 hover:text-emerald-800 font-bold transition">למשפחות ופרטיים</a>
                     <a href="#about" class="text-stone-700 hover:text-amber-600 font-semibold transition">הבטיחות והצוות</a>
                 </div>
 
-                <!-- כפתור קריאה לפעולה בגוון זהב חבל -->
                 <div class="hidden lg:flex items-center">
                     <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-stone-950 px-6 py-2.5 rounded-xl font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                         דברו איתנו
                     </a>
                 </div>
 
-                <!-- כפתור תפריט מובייל -->
                 <div class="lg:hidden flex items-center">
                     <button class="text-stone-700 hover:text-amber-600 focus:outline-none" aria-label="פתח תפריט">
                         <i class="fas fa-bars text-2xl"></i>
@@ -91,7 +75,6 @@
         </div>
     </nav>
 
-    <!-- אזור Hero (מסך פתיחה) -->
     <header class="hero-bg h-screen flex items-center justify-center text-center relative pt-20">
         <div class="max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
             <h1 class="text-5xl md:text-7xl font-black text-stone-50 mb-6 drop-shadow-lg leading-tight">
@@ -100,14 +83,13 @@
             <p class="text-xl md:text-2xl text-stone-200 mb-12 font-light drop-shadow-md max-w-3xl mx-auto">
                 חוויות אקסטרים, סנפלינג וסדנאות שטח בסטנדרט הבטיחות הגבוה בישראל. <br class="hidden md:block">ממיטב המומחים של יוצאי יחידות החילוץ.
             </p>
-
-            <!-- כפתורי פיצול קהל יעד משופרים -->
+            
             <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-                <a href="#corporate" class="group bg-stone-900 hover:bg-stone-800 text-amber-400 border border-amber-500/30 px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
+                <a href="corporate.html" class="group bg-stone-900 hover:bg-stone-800 text-amber-400 border border-amber-500/30 px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
                     <i class="fas fa-briefcase ml-3 text-2xl opacity-80 group-hover:opacity-100" aria-hidden="true"></i>
                     ימי גיבוש לחברות
                 </a>
-                <a href="#families" class="group bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
+                <a href="families.html" class="group bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
                     <i class="fas fa-users ml-3 text-2xl opacity-80 group-hover:opacity-100" aria-hidden="true"></i>
                     אטרקציות למשפחות
                 </a>
@@ -115,126 +97,91 @@
         </div>
     </header>
 
-    <!-- אזור מסלולי קהל יעד - חלוקה ברורה -->
     <section class="py-16 bg-[#fcfbf9] relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <!-- כרטיסיית חברות (גווני פחם/אבן) -->
-            <div id="corporate" class="bg-stone-900 text-stone-100 rounded-3xl p-8 border border-stone-800 shadow-xl hover-scale">
-                <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
-                    <i class="fas fa-building text-2xl text-amber-400" aria-hidden="true"></i>
+            
+            <div class="bg-stone-900 text-stone-100 rounded-3xl p-8 border border-stone-800 shadow-xl hover-scale flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
+                        <i class="fas fa-building text-2xl text-amber-400" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-stone-50 mb-4">ארגונים וקבוצות</h3>
+                    <p class="text-stone-300 mb-6 leading-relaxed text-lg">
+                        סדנאות ODT, סנפלינג קבוצתי וימי גיבוש שמותאמים אישית למטרות הארגון. פעילות חווייתית שמוציאה את הצוות מהשגרה ובונה אמון.
+                    </p>
                 </div>
-                <h3 class="text-3xl font-black text-stone-50 mb-4">ארגונים וקבוצות</h3>
-                <p class="text-stone-300 mb-6 leading-relaxed text-lg">
-                    סדנאות ODT, סנפלינג קבוצתי וימי גיבוש שמותאמים אישית למטרות הארגון. פעילות חווייתית שמוציאה את הצוות מהשגרה, בונה אמון ומפתחת מנהיגות.
-                </p>
-                <ul class="space-y-3 mb-8 text-stone-300 font-medium">
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> התאמה מלאה לאופי ולגודל הקבוצה</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> שילוב ארוחות ופריסות שטח בשטח</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> ליווי מקצועי צמוד של מדריכים בכירים</li>
-                </ul>
-                <a href="#contact" class="text-amber-400 font-bold hover:text-amber-300 flex items-center" aria-label="למעבר לטופס יצירת קשר לקבלת הצעת מחיר לארגון">
-                    לקבלת הצעת מחיר לארגון <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
+                <a href="corporate.html" class="mt-4 bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold text-center py-3 rounded-xl transition duration-300">
+                    צפו בכל הפעילויות לארגונים <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
                 </a>
             </div>
 
-            <!-- כרטיסיית משפחות (גווני ירוק יער/אבן) -->
-            <div id="families" class="bg-emerald-950 text-emerald-100 rounded-3xl p-8 border border-emerald-900 shadow-xl hover-scale">
-                <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
-                    <i class="fas fa-child text-2xl text-amber-400" aria-hidden="true"></i>
+            <div class="bg-emerald-950 text-emerald-100 rounded-3xl p-8 border border-emerald-900 shadow-xl hover-scale flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
+                        <i class="fas fa-child text-2xl text-amber-400" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-stone-50 mb-4">משפחות ופרטיים</h3>
+                    <p class="text-emerald-200 mb-6 leading-relaxed text-lg">
+                        מחפשים חוויה משפחתית בלתי נשכחת? ימי הולדת אתגריים, טיולי סנפלינג מותאמים לילדים, ופארקי חבלים שיעלו לכולם את האדרנלין.
+                    </p>
                 </div>
-                <h3 class="text-3xl font-black text-stone-50 mb-4">משפחות ופרטיים</h3>
-                <p class="text-emerald-200 mb-6 leading-relaxed text-lg">
-                    מחפשים חוויה משפחתית בלתי נשכחת? ימי הולדת אתגריים, טיולי סנפלינג מותאמים לילדים, ופארקי חבלים שיעלו לכולם את האדרנלין באווירה בטוחה ותומכת.
-                </p>
-                <ul class="space-y-3 mb-8 text-emerald-200 font-medium">
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> פעילויות בטוחות המותאמות גם לילדים</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> חוויה מגבשת שניתנת לביצוע בקבוצות קטנות</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> ציוד בטיחות ייעודי למידות ילדים ונוער</li>
-                </ul>
-                <a href="#contact" class="text-amber-400 font-bold hover:text-amber-300 flex items-center" aria-label="למעבר לטופס יצירת קשר לתיאום חוויה משפחתית">
-                    לתיאום חוויה משפחתית <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
+                <a href="families.html" class="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-center py-3 rounded-xl transition duration-300">
+                    צפו בכל הפעילויות למשפחות <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
                 </a>
             </div>
 
         </div>
     </section>
 
-    <!-- אזור הלקוחות (Trust Banner) -->
     <section class="py-12 bg-stone-100 border-y border-stone-200/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-xs font-bold text-stone-500 uppercase tracking-widest">הלקוחות שכבר חוו איתנו אקסטרים</h2>
             </div>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-75 hover:opacity-100 transition-opacity duration-500">
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-hotel" aria-hidden="true"></i> ישרוטל
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-bolt" aria-hidden="true"></i> חברת החשמל
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-leaf" aria-hidden="true"></i> החברה להגנת הטבע
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-city" aria-hidden="true"></i> עיריית אילת
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-mountain" aria-hidden="true"></i> פארק תמנע
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-bus" aria-hidden="true"></i> אגד תיור
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-tree" aria-hidden="true"></i> חבל אילות
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-glass-water" aria-hidden="true"></i> יטבתה
-                </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-75">
+                <div class="flex items-center gap-2 font-black text-xl text-stone-700 cursor-default"><i class="fas fa-hotel"></i> ישרוטל</div>
+                <div class="flex items-center gap-2 font-black text-xl text-stone-700 cursor-default"><i class="fas fa-bolt"></i> חברת החשמל</div>
+                <div class="flex items-center gap-2 font-black text-xl text-stone-700 cursor-default"><i class="fas fa-leaf"></i> החברה להגנת הטבע</div>
+                <div class="flex items-center gap-2 font-black text-xl text-stone-700 cursor-default"><i class="fas fa-mountain"></i> פארק תמנע</div>
             </div>
         </div>
     </section>
 
-    <!-- הצגת פעילויות בולטות -->
-    <section id="services" class="py-16 bg-white">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black text-stone-900 mb-4">הפעילויות שלנו בשטח</h2>
+                <h2 class="text-3xl md:text-4xl font-black text-stone-900 mb-4">הפעילויות המובילות בשטח</h2>
                 <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- שירות 1 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="אדם גולש בסנפלינג על צוק" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="relative overflow-hidden rounded-2xl shadow group aspect-video md:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="סנפלינג" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-bold text-stone-50 mb-1">סנפלינג וגלישה</h3>
-                        <p class="text-stone-300 text-sm">מתאים לחברות ולמשפחות</p>
+                        <h3 class="text-2xl font-bold text-stone-50 mb-1">סנפלינג וגלישת מצוקים</h3>
+                        <p class="text-stone-300 text-sm mb-3">חוויית גובה מטורפת ומבוקרת בכל רמות הקושי</p>
                     </div>
                 </div>
-
-                <!-- שירות 2 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1596423735880-5ce82d8c9034?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ילד עובר מכשול בפארק חבלים" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                
+                <div class="relative overflow-hidden rounded-2xl shadow group aspect-video md:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1596423735880-5ce82d8c9034?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="פארק חבלים" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
                         <h3 class="text-2xl font-bold text-stone-50 mb-1">פארק חבלים נייד</h3>
-                        <p class="text-stone-300 text-sm">מביאים את האתגר אליכם</p>
+                        <p class="text-stone-300 text-sm mb-3">מתקני אתגר וגשרים תלויים המוקמים בכל נקודה בארץ</p>
                     </div>
                 </div>
 
-                <!-- שירות 3 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="קבוצת אנשים במסע במדבר" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="relative overflow-hidden rounded-2xl shadow group aspect-video md:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="סדנאות ODT" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-bold text-stone-50 mb-1">מסעות וסדנאות ODT</h3>
-                        <p class="text-stone-300 text-sm">גיבוש, מנהיגות ועבודת צוות</p>
+                        <h3 class="text-2xl font-bold text-stone-50 mb-1">סדנאות מנהיגות ו-ODT</h3>
+                        <p class="text-stone-300 text-sm mb-3">משימות קבוצתיות בשטח לבניית מנהיגות ועבודת צוות</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- אזור צוות ובטיחות (עיצוב מיושר ללוגו - הרים וסלעים) -->
     <section id="about" class="py-20 bg-stone-900 text-stone-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -245,99 +192,50 @@
                     </p>
                     <ul class="space-y-4 text-stone-300">
                         <li class="flex items-start">
-                            <i class="fas fa-helicopter text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>צוות מדריכים בכיר בראשות דני שריון - מומחה חילוץ, בוגר וינגייט ויוצא יחידות מבצעיות.</span>
-                        </li>
-                        <li class="flex items-start">
                             <i class="fas fa-shield-alt text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>שימוש בציוד התקני, המאובטח והמתקדם ביותר בעולם, העומד בתקנים הבינלאומיים המחמירים.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-heart text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>חוויה רגשית מעצימה - אנו יודעים בדיוק איך לנסוך ביטחון ולהעביר את כולם את המכשול בהצלחה.</span>
+                            <span>צוות מדריכים בכיר בראשות דני שריון - מומחה חילוץ, בוגר וינגייט ויוצא יחידות מבצעיות.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="מדריך סנפלינג מקצועי מכין ציוד" class="rounded-2xl shadow-2xl border border-stone-800">
-                    <div class="absolute -bottom-6 -right-6 bg-amber-500 text-stone-950 p-6 rounded-2xl shadow-xl hidden md:block border border-amber-400">
-                        <p class="text-4xl font-black mb-1" aria-label="מעל 15 שנות ניסיון">+15</p>
-                        <p class="font-bold">שנות ניסיון בשטח</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="מדריך מקצועי" class="rounded-2xl shadow-2xl border border-stone-800">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- טופס יצירת קשר (מותאם למשפחות וחברות) -->
     <section id="contact" class="py-20 bg-stone-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 border border-stone-200/60">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl font-black text-stone-900 mb-3">בואו נצא לשטח</h2>
-                    <p class="text-stone-600">השאירו פרטים ונחזור אליכם בהקדם עם הצעה מותאמת אישית.</p>
+                    <p class="text-stone-600">השאירו פרטים ונחזור אליכם עם הצעה מותאמת אישית.</p>
                 </div>
-
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם מלא / איש קשר</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900">
+                            <label class="block text-sm font-bold text-stone-700 mb-2">שם מלא</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 text-stone-900 outline-none">
                         </div>
                         <div>
-                            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900">
+                            <label class="block text-sm font-bold text-stone-700 mb-2">טלפון</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 text-stone-900 outline-none">
                         </div>
                     </div>
-
-                    <!-- בחירת סוג הלקוח -->
-                    <div>
-                        <fieldset>
-                            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
-                            <div class="grid grid-cols-2 gap-4">
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="corporate" class="peer sr-only" checked>
-                                    <div class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-building block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">חברה / ארגון</span>
-                                    </div>
-                                </label>
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="family" class="peer sr-only">
-                                    <div class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-users block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">משפחה / פרטיים</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים / מטרת הגיבוש / תאריך מועדף)</label>
-                        <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
-                        שלחו פנייה
-                    </button>
+                    <button type="submit" class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300">שלחו פנייה</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- פוטר בסיסי יוקרתי -->
     <footer class="bg-stone-950 text-stone-400 py-12 text-center text-sm border-t border-stone-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <img src="logoHeb.png" alt="דני שריון גליצ'" class="h-12 w-auto opacity-70">
-            <p>&copy; 2026 דני שריון גליצ' - אטרקציות וסנפלינג. כל הזכויות שמורות.</p>
+            <p>&copy; 2026 דני שריון גליצ'. כל הזכויות שמורות.</p>
         </div>
     </footer>
 
-    <!-- כפתור WhatsApp צף -->
-    <a href="https://wa.me/972521234567?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%92%D7%9C%D7%99%D7%A6'%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all z-50" aria-label="פתח שיחת וואטסאפ">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
+    <a href="https://wa.me/972521234567" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition-all z-50"><i class="fab fa-whatsapp"></i></a>
 
 </body>
 </html>
