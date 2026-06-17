@@ -1,343 +1,346 @@
 ﻿<!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דני שריון גליצ' - חווית אקסטרים, סנפלינג וטבע</title>
+    
+    <!-- תגיות אופטימיזציה ו-SEO -->
+    <title>גליצ' אילת | טיולי סנפלינג, אטרקציות אתגר וימי גיבוש במדבר</title>
+    <meta name="description" content="חברת גליצ' של דני שריון מתמחה בטיולי סנפלינג, קניונינג, טיולי ג'יפים באילת, קורסי חבלים, הפקת ימי גיבוש, פעילויות ODT, פארקי חבלים ניידים ומרכזים אתגריים לקבוצות בכל הארץ.">
+    <meta name="keywords" content="סנפלינג באילת, אטרקציות באילת, ODT, ימי גיבוש, טיולי ג'יפים, פארק חבלים, קורס סנפלינג, נחל גשרון, נחל יהושפט">
+    <meta name="author" content="Glitch Eilat">
 
-    <!-- UserWay Accessibility Widget -->
-    <script src="https://cdn.userway.org/widget.js" data-account="your_account_id_here"></script>
+    <!-- תגיות Open Graph לשיתוף (WhatsApp / Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.glitch.co.il/">
+    <meta property="og:title" content="גליצ' אילת | טיולי סנפלינג, אטרקציות אתגר וימי גיבוש">
+    <meta property="og:description" content="חוויות אקסטרים בהתאמה אישית: טיולי חבלים וסנפלינג למשפחות לצד הפקות ODT וערבי גיבוש יוקרתיים לחברות וארגונים.">
+    <meta property="og:image" content="https://github.com/glitch-eilat/glitch-website/raw/main/images/logoHeb.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap');
+    <!-- קישור לקובץ ה-CSS הראשי של Vite -->
+    <link rel="stylesheet" href="/src/style.css">
 
-        body {
-            font-family: 'Heebo', sans-serif;
-            background-color: #fcfbf9; /* גוון אבן בהיר וחם */
-            color: #1c1917; /* שחור אבן/פחם */
-        }
-
-        /* תמונת רקע ראשית - סלע הרפתקני */
-        .hero-bg {
-            background-image: linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.5)), url('images/back.JPG');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-            .hover-scale:hover {
-                transform: translateY(-5px);
-            }
-
-        /* פס גלילה מעוצב בגוון זהב-חבל */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f0ec;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #d97706; /* amber-650 */
-            border-radius: 4px;
-        }
-
-            ::-webkit-scrollbar-thumb:hover {
-                background: #b45309;
-            }
-    </style>
+    <!-- פונטים ואייקונים חיצוניים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SDK של EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // יש להחליף במפתח הציבורי האמיתי של דני מתוך פנל EmailJS
+        emailjs.init("YOUR_PUBLIC_KEY");
+      })();
+    </script>
 </head>
-<body class="antialiased scroll-smooth">
+<body class="bg-stone-50 text-neutral-800 font-sans antialiased">
 
-    <!-- תפריט ניווט עליון חם ויוקרתי -->
-    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+    <!-- סרגל ניווט (Navbar) -->
+    <header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md text-white shadow-lg border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- לוגו -->
+            <a href="#" class="flex items-center gap-2">
+                <img src="images/logoHeb.png" alt="גליצ' לוגו" class="h-12 w-auto object-contain">
+            </a>
 
-                <!-- לוגו החברה הרשמי -->
-                <div id="head" class="flex-shrink-0 flex items-center cursor-pointer">
-                   <a href="#head"><img src="images\logoHeb-bg.png" alt="דני שריון גליצ' - לוגו" class="h-16 w-auto transition-transform duration-300 hover:scale-105"></a>
-                </div>
+            <!-- תפריט דסקטופ -->
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#" class="text-amber-400 hover:text-amber-300 transition">דף הבית</a>
+                <a href="private.html" class="text-stone-300 hover:text-amber-400 transition">משפחות ופרטיים</a>
+                <a href="groups.html" class="text-stone-300 hover:text-amber-400 transition">חברות וארגונים</a>
+                <a href="#about" class="text-stone-300 hover:text-amber-400 transition">אודות דני</a>
+                <a href="#contact" class="bg-emerald-700 hover:bg-emerald-600 text-white px-5 py-2 rounded-full transition shadow-md">צור קשר</a>
+            </nav>
 
-                <!-- תפריט דסקטופ מעוצב מחדש -->
-                <div class="hidden lg:flex space-x-reverse space-x-8 items-center">
-                    <a href="#services" class="text-stone-700 hover:text-amber-600 font-semibold transition">כל הפעילויות</a>
-                    <a href="#corporate" class="text-stone-700 hover:text-amber-600 font-semibold transition">לארגונים וחברות</a>
-                    <a href="#families" class="text-emerald-700 hover:text-emerald-800 font-bold transition">למשפחות ופרטיים</a>
-                    <a href="#about" class="text-stone-700 hover:text-amber-600 font-semibold transition">הבטיחות והצוות</a>
-                </div>
-
-                <!-- כפתור קריאה לפעולה בגוון זהב חבל -->
-                <div class="hidden lg:flex items-center">
-                    <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-stone-950 px-6 py-2.5 rounded-xl font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                        דברו איתנו
-                    </a>
-                </div>
-
-                <!-- כפתור תפריט מובייל -->
-                <div class="lg:hidden flex items-center">
-                    <button class="text-stone-700 hover:text-amber-600 focus:outline-none" aria-label="פתח תפריט">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+            <!-- כפתור המבורגר לנייד -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none text-2xl" aria-label="פתח תפריט">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </nav>
 
-    <!-- אזור Hero (מסך פתיחה) -->
-    <header class="hero-bg h-screen flex items-center justify-center text-center relative pt-20">
-        <div class="max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <h1 class="text-5xl md:text-7xl font-black text-stone-50 mb-6 drop-shadow-lg leading-tight">
-                השטח שלנו, <span class="text-amber-400">החוויה שלכם.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-stone-200 mb-12 font-light drop-shadow-md max-w-3xl mx-auto">
-                חוויות אקסטרים, סנפלינג וסדנאות שטח בסטנדרט הבטיחות הגבוה בישראל. <br class="hidden md:block">ממיטב המומחים של יוצאי יחידות החילוץ.
-            </p>
-
-            <!-- כפתורי פיצול קהל יעד משופרים -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-                <a href="#corporate" class="group bg-stone-900 hover:bg-stone-800 text-amber-400 border border-amber-500/30 px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
-                    <i class="fas fa-briefcase ml-3 text-2xl opacity-80 group-hover:opacity-100" aria-hidden="true"></i>
-                    ימי גיבוש לחברות
-                </a>
-                <a href="#families" class="group bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-5 rounded-2xl font-bold text-xl shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center">
-                    <i class="fas fa-users ml-3 text-2xl opacity-80 group-hover:opacity-100" aria-hidden="true"></i>
-                    אטרקציות למשפחות
-                </a>
-            </div>
+        <!-- תפריט נייד קורס -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-4 py-4 space-y-3 shadow-inner">
+            <a href="#" class="block text-amber-400 font-medium py-1">דף הבית</a>
+            <a href="private.html" class="block text-stone-300 hover:text-amber-400 py-1">משפחות ופרטיים</a>
+            <a href="groups.html" class="block text-stone-300 hover:text-amber-400 py-1">חברות וארגונים</a>
+            <a href="#about" class="block text-stone-300 hover:text-amber-400 py-1">אודות דני</a>
+            <a href="#contact" class="block bg-emerald-700 text-center text-white py-2 rounded-lg">צור קשר</a>
         </div>
     </header>
 
-    <!-- אזור מסלולי קהל יעד - חלוקה ברורה -->
-    <section class="py-16 bg-[#fcfbf9] relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <!-- כרטיסיית חברות (גווני פחם/אבן) -->
-            <div id="corporate" class="bg-stone-900 text-stone-100 rounded-3xl p-8 border border-stone-800 shadow-xl hover-scale">
-                <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
-                    <i class="fas fa-building text-2xl text-amber-400" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-3xl font-black text-stone-50 mb-4">ארגונים וקבוצות</h3>
-                <p class="text-stone-300 mb-6 leading-relaxed text-lg">
-                    סדנאות ODT, סנפלינג קבוצתי וימי גיבוש שמותאמים אישית למטרות הארגון. פעילות חווייתית שמוציאה את הצוות מהשגרה, בונה אמון ומפתחת מנהיגות.
-                </p>
-                <ul class="space-y-3 mb-8 text-stone-300 font-medium">
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> התאמה מלאה לאופי ולגודל הקבוצה</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> שילוב ארוחות ופריסות שטח בשטח</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> ליווי מקצועי צמוד של מדריכים בכירים</li>
-                </ul>
-                <a href="#contact" class="text-amber-400 font-bold hover:text-amber-300 flex items-center" aria-label="למעבר לטופס יצירת קשר לקבלת הצעת מחיר לארגון">
-                    לקבלת הצעת מחיר לארגון <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
+    <!-- Hero Section -->
+    <section class="relative bg-stone-950 text-white py-28 md:py-40 text-center overflow-hidden">
+        <!-- רקע תמונה עם שכבת כהות -->
+        <div class="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-black/50"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <span class="text-amber-400 font-bold uppercase tracking-wider text-sm bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">דני שריון מציג</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 mb-6 leading-tight">גליצ' - לגלות את האתגר שבמדבר</h1>
+            <p class="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                חוויית אקסטרים בטיחותית ומקצועית באילת ובכל רחבי הארץ. טיולי סנפלינג, קורסי חבלים, והפקות אירועים וימי גיבוש לחברות וארגונים מובילים.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="private.html" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-8 py-3.5 rounded-full transition shadow-lg flex items-center justify-center gap-2 text-base">
+                    <i class="fas fa-user-friends"></i> טיולים ופרטיים
+                </a>
+                <a href="groups.html" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg flex items-center justify-center gap-2 text-base">
+                    <i class="fas fa-building"></i> קבוצות וארגונים (ODT)
                 </a>
             </div>
-
-            <!-- כרטיסיית משפחות (גווני ירוק יער/אבן) -->
-            <div id="families" class="bg-emerald-950 text-emerald-100 rounded-3xl p-8 border border-emerald-900 shadow-xl hover-scale">
-                <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6 border border-amber-500/20">
-                    <i class="fas fa-child text-2xl text-amber-400" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-3xl font-black text-stone-50 mb-4">משפחות ופרטיים</h3>
-                <p class="text-emerald-200 mb-6 leading-relaxed text-lg">
-                    מחפשים חוויה משפחתית בלתי נשכחת? ימי הולדת אתגריים, טיולי סנפלינג מותאמים לילדים, ופארקי חבלים שיעלו לכולם את האדרנלין באווירה בטוחה ותומכת.
-                </p>
-                <ul class="space-y-3 mb-8 text-emerald-200 font-medium">
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> פעילויות בטוחות המותאמות גם לילדים</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> חוויה מגבשת שניתנת לביצוע בקבוצות קטנות</li>
-                    <li class="flex items-center"><i class="fas fa-check text-amber-400 ml-2" aria-hidden="true"></i> ציוד בטיחות ייעודי למידות ילדים ונוער</li>
-                </ul>
-                <a href="#contact" class="text-amber-400 font-bold hover:text-amber-300 flex items-center" aria-label="למעבר לטופס יצירת קשר לתיאום חוויה משפחתית">
-                    לתיאום חוויה משפחתית <i class="fas fa-arrow-left mr-2 text-sm" aria-hidden="true"></i>
-                </a>
-            </div>
-
         </div>
     </section>
 
-    <!-- אזור הלקוחות (Trust Banner) -->
-    <section class="py-12 bg-stone-100 border-y border-stone-200/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h2 class="text-xs font-bold text-stone-500 uppercase tracking-widest">הלקוחות שכבר חוו איתנו אקסטרים</h2>
-            </div>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-75 hover:opacity-100 transition-opacity duration-500">
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-hotel" aria-hidden="true"></i> ישרוטל
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-bolt" aria-hidden="true"></i> חברת החשמל
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-leaf" aria-hidden="true"></i> החברה להגנת הטבע
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-city" aria-hidden="true"></i> עיריית אילת
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-mountain" aria-hidden="true"></i> פארק תמנע
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-bus" aria-hidden="true"></i> אגד תיור
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-tree" aria-hidden="true"></i> חבל אילות
-                </div>
-                <div class="flex items-center gap-2 font-black text-xl text-stone-700 hover:text-amber-600 transition cursor-default">
-                    <i class="fas fa-glass-water" aria-hidden="true"></i> יטבתה
-                </div>
-            </div>
+    <!-- שני מסלולי פעילות מרכזיים (B2C / B2B) -->
+    <section class="py-20 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">מה החוויה שלכם?</h2>
+            <p class="text-stone-600 max-w-xl mx-auto">בחרו את אופי הפעילות המתאים לכם וצפו במגוון האפשרויות, המסלולים והמתחמים המקצועיים שלנו.</p>
         </div>
-    </section>
 
-    <!-- הצגת פעילויות בולטות -->
-    <section id="services" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black text-stone-900 mb-4">הפעילויות שלנו בשטח</h2>
-                <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- שירות 1 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="images/r6.avif" alt="אדם גולש בסנפלינג על צוק" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-bold text-stone-50 mb-1">סנפלינג וגלישה</h3>
-                        <p class="text-stone-300 text-sm">מתאים לחברות ולמשפחות</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- כרטיס פרטיים -->
+            <div class="bg-white rounded-2xl shadow-md border border-stone-200 overflow-hidden flex flex-col justify-between transition hover:shadow-xl group">
+                <div class="p-8">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-mountain"></i>
                     </div>
-                </div>
-
-                <!-- שירות 2 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="images/p3.avif" alt="ילד עובר מכשול בפארק חבלים" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-bold text-stone-50 mb-1">פארק חבלים נייד</h3>
-                        <p class="text-stone-300 text-sm">מביאים את האתגר אליכם</p>
-                    </div>
-                </div>
-
-                <!-- שירות 3 -->
-                <div class="relative overflow-hidden rounded-2xl shadow group cursor-pointer aspect-video md:aspect-square">
-                    <img src="images/odt2.avif" alt="קבוצת אנשים במסע במדבר" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-bold text-stone-50 mb-1">מסעות וסדנאות ODT</h3>
-                        <p class="text-stone-300 text-sm">גיבוש, מנהיגות ועבודת צוות</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- אזור צוות ובטיחות (עיצוב מיושר ללוגו - הרים וסלעים) -->
-    <section id="about" class="py-20 bg-stone-900 text-stone-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-5xl font-black mb-6 leading-tight">בטיחות ללא פשרות,<br><span class="text-amber-400">מקצועיות מהשטח.</span></h2>
-                    <p class="text-stone-300 text-lg mb-6 leading-relaxed">
-                        כשאתם יוצאים לשטח עם העובדים או המשפחה, אתם רוצים את צוות המומחים המיומן ביותר שישמור עליכם ויוביל את האתגר.
+                    <h3 class="text-2xl font-bold text-stone-900 mb-4">משפחות, מטיילים ופרטיים</h3>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        מחפשים להוסיף אדרנלין לחופשה הבאה שלכם באילת? הצטרפו לטיולי גלישת מצוקים חווייתיים בנחל יהושפט ובנחל גשרון, טיולי ג'יפים משולבים וקורסי חבלים מקצועיים המותאמים לכל רמה וגיל.
                     </p>
-                    <ul class="space-y-4 text-stone-300">
-                        <li class="flex items-start">
-                            <i class="fas fa-helicopter text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>צוות מדריכים בכיר בראשות דני שריון - מומחה חילוץ, בוגר וינגייט ויוצא יחידות מבצעיות.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-shield-alt text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>שימוש בציוד התקני, המאובטח והמתקדם ביותר בעולם, העומד בתקנים הבינלאומיים המחמירים.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-heart text-amber-400 mt-1 ml-4 text-xl w-6" aria-hidden="true"></i>
-                            <span>חוויה רגשית מעצימה - אנו יודעים בדיוק איך לנסוך ביטחון ולהעביר את כולם את המכשול בהצלחה.</span>
-                        </li>
+                    <ul class="space-y-2.5 text-stone-700 text-sm mb-6">
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> טיולי סנפלינג קצרים וארוכים באילת</li>
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> טרקים אתגריים וקניונינג בפריסה ארצית</li>
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> קורסי הכשרה בסיסיים לגלישה ומילוט</li>
                     </ul>
                 </div>
-                <div class="relative">
-                    <img src="images/r3.avif" alt="מדריך סנפלינג מקצועי מכין ציוד" class="rounded-2xl shadow-2xl border border-stone-800">
-                    <div class="absolute -bottom-6 -right-6 bg-amber-500 text-stone-950 p-6 rounded-2xl shadow-xl hidden md:block border border-amber-400">
-                        <p class="text-4xl font-black mb-1" aria-label="מעל 30 שנות ניסיון">+30</p>
-                        <p class="font-bold">שנות ניסיון בשטח</p>
+                <div class="p-8 bg-stone-50 border-t border-stone-100">
+                    <a href="private.html" class="block text-center bg-stone-900 hover:bg-stone-800 text-white font-bold py-3 rounded-xl transition">לכל מסלולי הפרטיים והמשפחות</a>
+                </div>
+            </div>
+
+            <!-- כרטיס חברות וקבוצות -->
+            <div class="bg-white rounded-2xl shadow-md border border-stone-200 overflow-hidden flex flex-col justify-between transition hover:shadow-xl group">
+                <div class="p-8">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-stone-900 mb-4">חברות, מוסדות וארגונים</h3>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        הפקות שטח מורכבות שמחברות בין אנשים. אנו מתמחים בבניית ימי גיבוש ייחודיים, סדנאות ODT משימתיות לפיתוח צוות, בניית רפסודות בלגונה, והקמת פארקי חבלים ומתחמי אקסטרים ניידים בכל מקום בארץ.
+                    </p>
+                    <ul class="space-y-2.5 text-stone-700 text-sm mb-6">
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> ימי כיף, ערבי זולה ומירוצי משימות בשטח</li>
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> מתחם "מרכז מדברי" אקטיבי עם מטווחים וחץ וקשת</li>
+                        <li><i class="fas fa-check text-emerald-600 ml-2"></i> פארקי חבלים ניידים, אומגות ומבני סווינג ענקיים</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-stone-50 border-t border-stone-100">
+                    <a href="groups.html" class="block text-center bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-xl transition">לפתרונות הפקה וימי גיבוש</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- טופס יצירת קשר (מותאם למשפחות וחברות) -->
-    <section id="contact" class="py-20 bg-stone-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 border border-stone-200/60">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-black text-stone-900 mb-3">בואו נצא לשטח</h2>
-                    <p class="text-stone-600">השאירו פרטים ונחזור אליכם בהקדם עם הצעה מותאמת אישית.</p>
+    <!-- אודות דני שריון -->
+    <section id="about" class="py-20 bg-stone-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-amber-400 mb-6 border-r-4 border-amber-500 pr-3">דני שריון וצוות גליצ'</h2>
+                <p class="text-stone-300 leading-relaxed mb-4">
+                    חברת גליצ' מנוהלת על ידי דני שריון, מבכירי אנשי החבל והחילוץ בישראל, בעל ניסיון של עשרות שנים בהדרכה, ניהול בטיחות והקמת מתקנים אתגריים מורכבים.
+                </p>
+                <p class="text-stone-300 leading-relaxed mb-6">
+                    הערך העליון שלנו הוא **בטיחות ללא פשרות**. כל הפעילויות, הציוד והמתקנים מחזיקים באישורים ההנדסיים המחמירים ביותר, בביטוחים מקיפים ובאישורי משרד החינוך (תו תקן) להפעלת קבוצות, בתי ספר וארגונים ממשלתיים.
+                </p>
+                <div class="flex items-center gap-4 text-amber-400 font-bold">
+                    <span><i class="fas fa-shield-alt ml-1"></i> בטיחות מוסמכת</span>
+                    <span><i class="fas fa-certificate ml-1"></i> תו תקן רשמי</span>
                 </div>
-
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם מלא / איש קשר</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900">
-                        </div>
-                    </div>
-
-                    <!-- בחירת סוג הלקוח -->
-                    <div>
-                        <fieldset>
-                            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
-                            <div class="grid grid-cols-2 gap-4">
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="corporate" class="peer sr-only" checked>
-                                    <div class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-building block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">חברה / ארגון</span>
-                                    </div>
-                                </label>
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="family" class="peer sr-only">
-                                    <div class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-users block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">משפחה / פרטיים</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים / מטרת הגיבוש / תאריך מועדף)</label>
-                        <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
-                        שלחו פנייה
-                    </button>
-                </form>
+            </div>
+            <div class="relative max-w-md mx-auto">
+                <div class="absolute inset-0 bg-amber-500 rounded-2xl transform rotate-3 scale-102 opacity-20"></div>
+                <img src="images/logoHeb.png" alt="דני שריון גליצ'" class="relative z-10 bg-stone-800 p-8 rounded-2xl border border-stone-700 shadow-xl mx-auto">
             </div>
         </div>
     </section>
 
-    <!-- פוטר בסיסי יוקרתי -->
-    <footer class="bg-stone-950 text-stone-400 py-12 text-center text-sm border-t border-stone-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="logoHeb.png" alt="דני שריון גליצ'" class="h-12 w-auto opacity-70">
-            <p>&copy; 2026 דני שריון גליצ' - אטרקציות וסנפלינג. כל הזכויות שמורות.</p>
+    <!-- טופס יצירת קשר מוגן ומאומת -->
+    <section id="contact" class="py-20 max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-stone-900 mb-3">דברו איתנו</h2>
+            <p class="text-stone-600">השאירו פרטים ונחזור אליכם להתאמת החוויה או האירוע שלכם</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg border border-stone-200 p-8">
+            <!-- תיבת סטטוס כללית לשליחה (מוסתרת כברירת מחדל) -->
+            <div id="form-status" class="hidden p-4 rounded-xl mb-6 text-center font-medium"></div>
+
+            <form id="contact-form" class="space-y-6">
+                <!-- שם מלא -->
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">שם מלא *</label>
+                    <input type="text" id="name" name="from_name" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none">
+                    <span id="name-error" class="form-error text-red-500 text-xs font-medium mt-1 block hidden"></span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- אימייל -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">כתובת אימייל *</label>
+                        <input type="email" id="email" name="reply_to" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none dir-ltr text-right">
+                        <span id="email-error" class="form-error text-red-500 text-xs font-medium mt-1 block hidden"></span>
+                    </div>
+
+                    <!-- טלפון -->
+                    <div>
+                        <label for="phone" class="block text-sm font-semibold text-stone-700 mb-1">מספר טלפון נייד *</label>
+                        <input type="tel" id="phone" name="phone_number" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none dir-ltr text-right" placeholder="05XXXXXXXX">
+                        <span id="phone-error" class="form-error text-red-500 text-xs font-medium mt-1 block hidden"></span>
+                    </div>
+                </div>
+
+                <!-- הודעה -->
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-stone-700 mb-1">פרטו על האירוע / הטיול המבוקש *</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none resize-none"></textarea>
+                    <span id="message-error" class="form-error text-red-500 text-xs font-medium mt-1 block hidden"></span>
+                </div>
+
+                <!-- כפתור שליחה -->
+                <button type="submit" id="submit-btn" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl transition shadow-md text-base">
+                    שלח הודעה
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- פוטר האתר -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-900 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-4 space-y-4">
+            <div>
+                <img src="images/logoHeb.png" alt="גליצ'" class="h-10 w-auto mx-auto brightness-90 mb-4">
+                <p class="text-stone-300 font-semibold">גליצ' - דני שריון אקסטרים ובטיחות בחבל</p>
+                <p>אילת וכל רחבי הארץ</p>
+            </div>
+            <div class="flex justify-center gap-6 py-2">
+                <a href="private.html" class="hover:text-amber-400 transition">פרטיים ומשפחות</a>
+                <a href="groups.html" class="hover:text-amber-400 transition">חברות וארגונים</a>
+                <a href="#about" class="hover:text-amber-400 transition">אודות</a>
+            </div>
+            <p class="text-xs text-stone-600">&copy; 2026 גליצ' אילת. כל הזכויות שמורות לבטיחות אקסטרים.</p>
         </div>
     </footer>
 
-    <!-- כפתור WhatsApp צף -->
-    <a href="https://wa.me/972521234567?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%92%D7%9C%D7%99%D7%A6'%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all z-50" aria-label="פתח שיחת וואטסאפ">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <!-- כפתור וואטסאפ צף מהיר -->
+    <a href="https://wa.me/972541234567" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl transition hover:scale-105" aria-label="פנייה בוואטסאפ לדני">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- רכיב נגישות נטען בסוף -->
+    <script>(function(_d,_e){var _s=_d.createElement(_e),_h=_d.getElementsByTagName(_e)[0];_s.id='userwayAccessibilityWidget';_s.src='https://cdn.userway.org/widget.js';_s.setAttribute('data-account','YOUR_USERWAY_ID');_h.parentNode.insertBefore(_s,_h);})(document,'script');</script>
+
+    <!-- לוגיקת JavaScript: תפריט נייד + אימות וחיבור טופס EmailJS -->
+    <script type="text/javascript">
+        // 1. ניהול תפריט המבורגר לניידים
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // סגירת תפריט נייד בלחיצה על לינק
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // 2. אימות טופס ושיגור ל-EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            clearErrors();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+
+            if (name.length < 2) {
+                showError('name-error', 'אנא הזן שם מלא (לפחות 2 אותיות)');
+                isValid = false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email-error', 'אנא הזן כתובת אימייל תקינה');
+                isValid = false;
+            }
+
+            const phoneRegex = /^05\d-?\d{7}$/;
+            if (!phoneRegex.test(phone)) {
+                showError('phone-error', 'אנא הזן מספר טלפון נייד תקין (למשל: 0541234567)');
+                isValid = false;
+            }
+
+            if (message.length < 10) {
+                showError('message-error', 'הודעה קצרה מדי, אנא פרט קצת יותר (לפחות 10 תווים)');
+                isValid = false;
+            }
+
+            if (isValid) {
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'שולח הודעה...';
+
+                // יש להחליף את ה-IDs הבאים בנתונים שדני יקבל מתוך חשבון ה-EmailJS שלו
+                emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                    .then(function() {
+                        showFormStatus('success', 'ההודעה נשלחה בהצטיינות! נחזור אליכם בהקדם האפשרי.');
+                        document.getElementById('contact-form').reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'שלח הודעה';
+                    }, function(error) {
+                        showFormStatus('error', 'אופס! תקלה זמנית בשליחה. אנא פנו אלינו ישירות בוואטסאפ.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'שלח הודעה';
+                        console.error('EmailJS Error:', error);
+                    });
+            }
+        });
+
+        function showError(elementId, msg) {
+            const errorEl = document.getElementById(elementId);
+            if (errorEl) {
+                errorEl.innerText = msg;
+                errorEl.classList.remove('hidden');
+            }
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.form-error').forEach(err => {
+                err.innerText = '';
+                err.classList.add('hidden');
+            });
+            const statusBox = document.getElementById('form-status');
+            if (statusBox) statusBox.classList.add('hidden');
+        }
+
+        function showFormStatus(type, msg) {
+            const statusBox = document.getElementById('form-status');
+            if (!statusBox) return;
+            
+            statusBox.innerText = msg;
+            statusBox.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            
+            if (type === 'success') {
+                statusBox.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-300');
+            } else {
+                statusBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+            }
+        }
+    </script>
 </body>
 </html>
