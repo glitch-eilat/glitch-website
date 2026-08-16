@@ -15,30 +15,43 @@
 <body class="bg-stone-50 text-neutral-800">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50 transition-all duration-300"
+        id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                <div id="head" class="flex-shrink-0 flex items-center cursor-pointer">
                     <a href="index_en.html"><img src="../images/logoEng-bg.png" alt="Glitch Logo"
-                            class="h-16 w-auto hover:scale-105 transition-transform"></a>
+                            class="h-16 w-auto transition-transform duration-300 hover:scale-105"></a>
                 </div>
-                <div class="hidden lg:flex space-x-8 items-center font-semibold">
-                    <a href="index_en.html"     class="text-stone-700 hover:text-amber-600 font-semibold transition">Home</a>
-                    <a href="groups_en.html"    class="text-stone-700 hover:text-amber-600 font-semibold transition">Corporate Events</a>
-                    <a href="private_en.html"   class="text-stone-700 hover:text-amber-800 font-bold transition">Family & Private</a>
+                <div class="hidden lg:flex space-x-reverse space-x-8 items-center">
+                    <a href="index_en.html" class="text-stone-700 hover:text-amber-600 font-semibold transition">Home</a>
+                    <a href="groups_en.html" class="text-stone-700 hover:text-amber-600 font-semibold transition">Corporate Events</a>
+                    <a href="private_en.html" class="text-stone-700 hover:text-amber-800 font-bold transition">Family & Private</a>
                 </div>
-                <a href="index_en.html#contact"
-                    class="hidden lg:block bg-amber-500 hover:bg-amber-600 text-stone-950 px-6 py-2.5 rounded-xl font-bold shadow-md transition-all">Get
-                    in Touch</a>
+                <div class="hidden lg:flex items-center">
+                    <!-- Language Switcher -->
+                    <a href="../index.html" class="text-stone-500 hover:text-emerald-700 font-bold border-r border-stone-300 pr-2 pl-4 transition">
+                        HEB
+                    </a>
+                    <!-- Language Switcher -->
+                    <a href="index_en.html#contact"
+                        class="hidden lg:block bg-amber-500 hover:bg-amber-600 text-stone-950 px-6 py-2.5 rounded-xl font-bold shadow-md transition-all">Get
+                        in Touch</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-btn" class="text-stone-700 hover:text-amber-600 focus:outline-none"
+                        aria-label="פתח תפריט">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <!-- Language Switcher -->
-        <div class="hidden lg:flex items-center space-x-4 space-x-reverse">
-            <!-- Language Switcher -->
-            <a href="../private.html"
-                class="text-stone-500 hover:text-emerald-700 font-bold border-r border-stone-300 pl-4 transition">
-                HEB
-            </a>
+        <!-- תפריט מובייל נסתר -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 border-b border-stone-200 p-4 space-y-4">
+            <a href="index_en.html"             class="block text-stone-700 hover:text-amber-600 font-semibold">Home</a>
+            <a href="groups_en.html"            class="block text-stone-700 hover:text-amber-600 font-semibold">Corporate Events</a>
+            <a href="private_en.html"           class="block text-stone-700 hover:text-amber-600 font-semibold">Family & Private</a>
+            <a href="index_en.html#contact"     class="block bg-amber-500 text-center py-2 rounded-xl font-bold">Get in Touch</a>
         </div>
     </nav>
 
@@ -146,10 +159,12 @@
         </div>
 
         <div class="text-center mt-12">
-                <h2 class="text-4xl font-bold mb-6">Plan Your Adventure</h2>
-                <p class="text-lg mb-8">Not sure which activity is right for you? Tell us who is coming and we'll help you choose.</p>
+            <h2 class="text-4xl font-bold mb-6">Plan Your Adventure</h2>
+            <p class="text-lg mb-8">Not sure which activity is right for you? Tell us who is coming and we'll help you
+                choose.</p>
             <a href="index_en.html#contact"
-                class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3 rounded-full transition shadow-md hover:-translate-y-1">Talk to Danny</a>
+                class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3 rounded-full transition shadow-md hover:-translate-y-1">Talk
+                to Danny</a>
         </div>
     </main>
 
