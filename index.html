@@ -523,7 +523,7 @@
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
             // שלב א': השאר את השורה הבאה עם הערה (//) לשליחה הראשונה שתפעיל את הטופס ב-Forminit.
             // שלב ב': לאחר השליחה הראשונה, הסר את ה-// כדי שהטופס ישלח באמצעות JS ללא רענון עמוד.
-            // e.preventDefault();
+            e.preventDefault();
 
             // שליפת ערכים לפי ה-ID של השדות
             const name = document.getElementById('name').value.trim();
