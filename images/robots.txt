@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.glitch-eilat.co.il/sitemap.xml
