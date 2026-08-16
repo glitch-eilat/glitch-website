@@ -445,66 +445,99 @@
                     <p class="text-stone-600">השאירו פרטים ונחזור אליכם בהקדם עם הצעה מותאמת אישית.</p>
                 </div>
 
-                <form action="https://formspree.io/f/mjyberow" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם מלא / איש
-                                קשר</label>
-                            <input type="text" id="name" name="name"
-                                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
-                                required>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד</label>
-                            <input type="tel" id="phone" name="phone"
-                                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
-                                required>
-                        </div>
-                    </div>
+               <form action="https://formspree.io/f/mjyberow" method="POST" class="space-y-6" id="contactForm">
+    <!-- אזור להצגת הודעת הצלחה או שגיאה -->
+    <div id="formStatus" class="hidden"></div>
 
-                    <div>
-                        <fieldset>
-                            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
-                            <div class="grid grid-cols-2 gap-4">
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="corporate" class="peer sr-only"
-                                        checked>
-                                    <div
-                                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-building block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">חברה / ארגון</span>
-                                    </div>
-                                </label>
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="client_type" value="family" class="peer sr-only">
-                                    <div
-                                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 hover:bg-stone-50 transition text-stone-700">
-                                        <i class="fas fa-users block mb-2 text-xl" aria-hidden="true"></i>
-                                        <span class="font-semibold">משפחה / פרטיים</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </fieldset>
-                    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם מלא / איש קשר</label>
+            <input type="text" id="name" name="name"
+                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
+                required>
+        </div>
+        <div>
+            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד</label>
+            <input type="tel" id="phone" name="phone"
+                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
+                required>
+        </div>
+    </div>
 
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים /
-                            מטרת הגיבוש / תאריך מועדף)</label>
-                        <textarea id="message" name="message" rows="3"
-                            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
+    <div>
+        <fieldset>
+            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
+            <div class="grid grid-cols-2 gap-4">
+                <label class="cursor-pointer">
+                    <input type="radio" name="client_type" value="corporate" class="peer sr-only" checked>
+                    <div
+                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 hover:bg-stone-50 transition text-stone-700">
+                        <i class="fas fa-building block mb-2 text-xl" aria-hidden="true"></i>
+                        <span class="font-semibold">חברה / ארגון</span>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים /
-                            מטרת הגיבוש / תאריך מועדף)</label>
-                        <textarea id="message" rows="3"
-                            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="client_type" value="family" class="peer sr-only">
+                    <div
+                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 hover:bg-stone-50 transition text-stone-700">
+                        <i class="fas fa-users block mb-2 text-xl" aria-hidden="true"></i>
+                        <span class="font-semibold">משפחה / פרטיים</span>
                     </div>
+                </label>
+            </div>
+        </fieldset>
+    </div>
 
-                    <button type="submit"
-                        class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
-                        שלחו פנייה
-                    </button>
-                </form>
+    <div>
+        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים / מטרת הגיבוש / תאריך מועדף)</label>
+        <textarea id="message" name="message" rows="3"
+            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
+    </div>
+
+    <button type="submit" id="submitBtn"
+        class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
+        שלחו פנייה
+    </button>
+</form>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'שולח פנייה...';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            statusDiv.classList.remove('hidden');
+
+            if (response.ok) {
+                statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.</div>';
+                form.reset();
+                form.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">שליחת הטופס נכשלה. אנא נסה שוב או פנה בוואטסאפ.</div>';
+            }
+        } catch (error) {
+            statusDiv.classList.remove('hidden');
+            statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">אירעה שגיאת תקשורת. אנא נסה שוב.</div>';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'שלחו פנייה';
+        }
+    });
+</script>
             </div>
         </div>
     </section>
