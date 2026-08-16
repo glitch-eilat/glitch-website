@@ -502,7 +502,7 @@
                             </div>
                         </fieldset>
                     </div>
-                    
+
                     <div>
                         <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה</label>
                         <textarea id="message" name="message" rows="3"
@@ -521,7 +521,9 @@
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
-           // e.preventDefault();
+            // שלב 1: השאר את השורות הבאות כמו שהן (עם //) כדי לבצע שליחה ראשונה שתפעיל את הטופס ב-Forminit.
+            // שלב 2: אחרי שתשלח פנייה אחת בהצלחה באתר, מחק את ה-// פה למטה כדי שהטופס יעבוד עם הודעה באתר בלי לרענן עמוד.
+            // e.preventDefault();
 
             const form = e.target;
             const statusDiv = document.getElementById('formStatus');
@@ -594,6 +596,8 @@
             }
         });
     </script>
+
+
 
     <footer class="bg-stone-950 text-stone-400 py-12 text-center text-sm border-t border-stone-900">
         <div
