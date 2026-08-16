@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דני שריון גליצ' - חווית אקסטרים, סנפלינג וטבע</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.userway.org/widget.js" data-account="i45EPsUyDF"></script>
     <meta name="description"
         content="דני שריון גליצ' - חוויות אקסטרים, סנפלינג וטיולי שטח באילת למשפחות וארגונים. עם מעל 20 שנות ניסיון, אנו מבטיחים בטיחות ללא פשרות וחוויה בלתי נשכחת.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="i45EPsUyDF"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "o24GDb_Pw5tzAMnOA",
+            });
+        })();
+    </script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap');
@@ -437,110 +446,153 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="py-20 bg-stone-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 border border-stone-200/60">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-black text-stone-900 mb-3">בואו נצא לשטח</h2>
-                    <p class="text-stone-600">השאירו פרטים ונחזור אליכם בהקדם עם הצעה מותאמת אישית.</p>
-                </div>
+    <section id="contact" class="py-16 bg-stone-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-stone-200">
+                <h2 class="text-3xl font-bold text-stone-900 mb-6 text-center">צרו קשר</h2>
 
-               <form action="https://formspree.io/f/mjyberow" method="POST" class="space-y-6" id="contactForm">
-    <!-- אזור להצגת הודעת הצלחה או שגיאה -->
-    <div id="formStatus" class="hidden"></div>
+                <div id="formStatus" class="hidden mb-6"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם מלא / איש קשר</label>
-            <input type="text" id="name" name="name"
-                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
-                required>
-        </div>
-        <div>
-            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד</label>
-            <input type="tel" id="phone" name="phone"
-                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"
-                required>
-        </div>
-    </div>
-
-    <div>
-        <fieldset>
-            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
-            <div class="grid grid-cols-2 gap-4">
-                <label class="cursor-pointer">
-                    <input type="radio" name="client_type" value="corporate" class="peer sr-only" checked>
-                    <div
-                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 hover:bg-stone-50 transition text-stone-700">
-                        <i class="fas fa-building block mb-2 text-xl" aria-hidden="true"></i>
-                        <span class="font-semibold">חברה / ארגון</span>
+                <form action="https://forminit.com/f/v3chkibw8xr" method="POST" class="space-y-6" id="contactForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- שם -->
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">שם (חובה)</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 transition outline-none"
+                                required>
+                        </div>
+                        <!-- טלפון -->
+                        <div>
+                            <label for="phone" class="block text-sm font-bold text-stone-700 mb-2">טלפון נייד (חובה)</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 transition outline-none"
+                                required>
+                        </div>
                     </div>
-                </label>
-                <label class="cursor-pointer">
-                    <input type="radio" name="client_type" value="family" class="peer sr-only">
-                    <div
-                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 hover:bg-stone-50 transition text-stone-700">
-                        <i class="fas fa-users block mb-2 text-xl" aria-hidden="true"></i>
-                        <span class="font-semibold">משפחה / פרטיים</span>
+
+                    <!-- אימייל (חובה) -->
+                    <div>
+                        <label for="email" class="block text-sm font-bold text-stone-700 mb-2">אימייל (חובה)</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 transition outline-none"
+                            required>
                     </div>
-                </label>
-            </div>
-        </fieldset>
-    </div>
 
-    <div>
-        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה (גילאי הילדים / מטרת הגיבוש / תאריך מועדף)</label>
-        <textarea id="message" name="message" rows="3"
-            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 focus:bg-white transition outline-none text-stone-900"></textarea>
-    </div>
+                    <div>
+                        <fieldset>
+                            <legend class="block text-sm font-bold text-stone-700 mb-2">עבור מי הפעילות?</legend>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="client_type" value="corporate" class="peer sr-only"
+                                        checked>
+                                    <div
+                                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-amber-500/10 peer-checked:border-amber-500 peer-checked:text-amber-800 transition text-stone-700">
+                                        <span class="font-semibold">חברה / ארגון</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="client_type" value="family" class="peer sr-only">
+                                    <div
+                                        class="rounded-lg border border-stone-200 p-4 text-center peer-checked:bg-emerald-500/10 peer-checked:border-emerald-600 peer-checked:text-emerald-850 transition text-stone-700">
+                                        <span class="font-semibold">משפחה / פרטיים</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
 
-    <button type="submit" id="submitBtn"
-        class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
-        שלחו פנייה
-    </button>
-</form>
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-stone-700 mb-2">הודעה</label>
+                        <textarea id="message" name="message" rows="3"
+                            class="w-full px-4 py-3 rounded-lg bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-amber-500 transition outline-none"
+                            required></textarea>
+                    </div>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = new FormData(form);
-        const statusDiv = document.getElementById('formStatus');
-        const submitBtn = document.getElementById('submitBtn');
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'שולח פנייה...';
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            statusDiv.classList.remove('hidden');
-
-            if (response.ok) {
-                statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.</div>';
-                form.reset();
-                form.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">שליחת הטופס נכשלה. אנא נסה שוב או פנה בוואטסאפ.</div>';
-            }
-        } catch (error) {
-            statusDiv.classList.remove('hidden');
-            statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">אירעה שגיאת תקשורת. אנא נסה שוב.</div>';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'שלחו פנייה';
-        }
-    });
-</script>
+                    <button type="submit" id="submitBtn"
+                        class="w-full bg-stone-900 hover:bg-stone-950 text-amber-400 font-bold py-4 rounded-xl shadow-lg transition duration-300 text-lg border border-amber-500/30">
+                        שלחו פנייה
+                    </button>
+                </form>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const statusDiv = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // שליפת ערכים
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let errors = [];
+
+            // 1. בדיקת שם מלא
+            if (!name) {
+                errors.push('נא להזין שם מלא');
+            }
+
+            // 2. בדיקת טלפון (פורמט ישראלי)
+            const phoneRegex = /^0[234589]{1}-?\d{7,8}$/;
+            if (!phoneRegex.test(phone)) {
+                errors.push('נא להזין מספר טלפון נייד או קווי תקין (למשל: 0501234567)');
+            }
+
+            // 3. בדיקת אימייל חובה ותקין
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                errors.push('נא להזין כתובת אימייל חוקית');
+            }
+
+            // 4. בדיקת אורך הודעה (מינימום 20 תווים)
+            if (message.length < 20) {
+                errors.push('הודעה קצרה מדי. נא לפרט מעט יותר (לפחות 20 תווים)');
+            }
+
+            // הצגת שגיאות במידה ויש
+            if (errors.length > 0) {
+                statusDiv.classList.remove('hidden');
+                statusDiv.innerHTML = `<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold">${errors.join('<br>')}</div>`;
+                statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // אם הכול תקין - שליחה ל-Forminit
+            statusDiv.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'שולח פנייה...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    statusDiv.classList.remove('hidden');
+                    statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.</div>';
+                    form.reset();
+                    form.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                statusDiv.classList.remove('hidden');
+                statusDiv.innerHTML = '<div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.</div>';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'שלחו פנייה';
+            }
+        });
+    </script>
 
     <footer class="bg-stone-950 text-stone-400 py-12 text-center text-sm border-t border-stone-900">
         <div
