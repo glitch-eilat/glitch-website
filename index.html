@@ -525,13 +525,9 @@
             // שלב ב': לאחר השליחה הראשונה, הסר את ה-// כדי שהטופס ישלח באמצעות JS ללא רענון עמוד.
             // e.preventDefault();
 
-            const form = e.target;
-            const statusDiv = document.getElementById('formStatus');
-            const submitBtn = document.getElementById('submitBtn');
-
             // שליפת ערכים לפי ה-ID של השדות
             const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value = phone.startsWith('0') ? '+972' + phone.slice(1).replace(/-/g, '') : phone;
+            const phoneInput = document.getElementById('phone');
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
@@ -542,10 +538,16 @@
                 errors.push('נא להזין שם מלא');
             }
 
-            // 2. בדיקת טלפון (פורמט ישראלי)
-            const phoneRegex = /^0[234589]{1}-?\d{7,8}$/;
+            // 2. בדיקת טלפון ישראלי
+            let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
+
+            const phoneRegex = /^0\d{9}$/;
+
             if (!phoneRegex.test(phone)) {
-                errors.push('נא להזין מספר טלפון נייד או קווי תקין (למשל: 0501234567)');
+                errors.push('נא להזין מספר טלפון ישראלי תקין (למשל: 0537399556)');
+            } else {
+                phone = '+972' + phone.substring(1);
+                phoneInput.value = phone;
             }
 
             // 3. בדיקת אימייל חובה ותקין
