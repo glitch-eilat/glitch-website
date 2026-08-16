@@ -531,7 +531,7 @@
 
             // שליפת ערכים לפי ה-ID של השדות
             const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
+            const phone = document.getElementById('phone').value = phone.startsWith('0') ? '+972' + phone.slice(1).replace(/-/g, '') : phone;
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
