@@ -94,7 +94,7 @@
             <a href="index_en.html#about" class="block text-stone-700 hover:text-amber-600 font-semibold">Safety and
                 Team</a>
             <!-- Language Switcher for Mobile -->
-            <a href="he/index_he.html" class="block text-emerald-700 font-bold border-t border-stone-200 pt-2 ">Switch
+            <a href="../index_he.html" class="block text-emerald-700 font-bold border-t border-stone-200 pt-2 ">Switch
                 to
                 Hebrew</a>
             <a href="#contact" class="block bg-amber-500 text-center py-2 rounded-xl font-bold">Contact Us</a>
@@ -432,7 +432,21 @@
     <footer class="bg-stone-950 text-stone-400 py-12 text-center text-sm">
         <p>&copy; 2026 Danny Shiryon Glitch. All Rights Reserved.</p>
     </footer>
+    
+    <a href="https://wa.me/972537399557?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%92%D7%9C%D7%99%D7%A6'%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA"
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all z-50"
+        aria-label="פתח שיחת וואטסאפ">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
