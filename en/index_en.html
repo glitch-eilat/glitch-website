@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danny Shiryon Glitch - Extreme Eilat | Rappelling & Outdoor Adventures</title>
+    <title>Glitch Eilat | Danny Shiryon | Rappelling, Outdoor Adventures & Team Building in Eilat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <script src="https://cdn.userway.org/widget.js" data-account="i45EPsUyDF"></script>
-    <meta name="description" content="Experience the best of Eilat's nature with Danny Shiryon Glitch. Professional rappelling, ODT team building, and outdoor adventure tours. Uncompromising safety.">
+    <meta name="description" content="Rappelling, desert adventures, rope challenges and team building in Eilat. Activities for families, private groups and organizations, led by experienced rescue professionals.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -20,11 +20,18 @@
 <body class="antialiased scroll-smooth">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50">
+    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-sm shadow-sm border-b border-stone-200/50 transition-all duration-300"
+        id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="../en/index_en.html"><img src="../images/logoEng-bg.png" alt="Glitch Logo" class="h-16 w-auto"></a>
-                <div class="hidden lg:flex space-x-8 font-semibold">
+
+                <!-- Logo -->
+                <div id="head" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="../en/index.html#head"><img src="../images/logoEng-bg.png" alt="Glitch Logo"
+                            class="h-16 w-auto transition-transform duration-300 hover:scale-105"></a>
+                </div>  
+                <!-- Desktop Links -->
+                <div class="hidden lg:flex space-x-reverse space-x-8 items-center">
                     <a href="#services" class="text-stone-700 hover:text-amber-600">Activities</a>
                     <a href="groups_en.html" class="text-stone-700 hover:text-amber-600">Corporate</a>
                     <a href="private_en.html" class="text-stone-700 hover:text-emerald-800">Private</a>
@@ -33,7 +40,7 @@
                  <!-- Language Switcher & Contact Button -->
                 <div class="hidden lg:flex items-center space-x-4 space-x-reverse">
                     <!-- Language Switcher -->
-                    <a href="../index_en.html"
+                    <a href="../index.html"
                         class="text-stone-500 hover:text-emerald-700 font-bold border-r border-stone-300 pr-2 pl-4 transition">
                         HEB
                     </a>
@@ -43,7 +50,25 @@
                         contact
                     </a>
                 </div>
+                 <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-btn" class="text-stone-700 hover:text-amber-600 focus:outline-none"
+                        aria-label="open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 border-b border-stone-200 p-4 space-y-4">
+            <a href="index_en.html#services" class="block text-stone-700 hover:text-amber-600 font-semibold">Activities</a>
+            <a href="groups_en.html" class="block text-stone-700 hover:text-amber-600 font-semibold">For Organizations</a>
+            <a href="private_en.html" class="block text-stone-700 hover:text-emerald-800 font-bold">For Families and Individuals</a>
+            <a href="index_en.html#about" class="block text-stone-700 hover:text-amber-600 font-semibold">Safety and Team</a>
+            <!-- Language Switcher for Mobile -->
+            <a href="he/index_he.html" class="block text-emerald-700 font-bold border-t border-stone-200 pt-2 ">Switch to
+                Hebrew</a>
+            <a href="#contact" class="block bg-amber-500 text-center py-2 rounded-xl font-bold">Contact Us</a>
         </div>
     </nav>
 
