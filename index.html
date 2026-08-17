@@ -108,12 +108,13 @@
         </div>
 
         <!-- Mobile Menu -->
-         <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 border-b border-stone-200 p-4 space-y-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 border-b border-stone-200 p-4 space-y-4">
             <a href="index.html" class="block text-stone-700 hover:text-amber-600 font-semibold">כל הפעילויות</a>
             <a href="groups.html" class="block text-stone-700 hover:text-amber-600 font-semibold">לארגונים וחברות</a>
             <a href="private.html" class="block text-stone-700 hover:text-emerald-800 font-bold">למשפחות ופרטיים</a>
             <a href="index.html#contact" class="block bg-amber-500 text-center py-2 rounded-xl font-bold">דברו איתנו</a>
-            <a href="en/index_en.html" class="block text-emerald-700 font-bold border-t border-stone-200 pt-2 ">Switch to English</a>
+            <a href="en/index_en.html" class="block text-emerald-700 font-bold border-t border-stone-200 pt-2 ">Switch
+                to English</a>
         </div>
     </nav>
 
@@ -344,6 +345,7 @@
             </div>
         </div>
     </section>
+
     <!-- גלריית רגעים בשטח (Masonry Gallery) -->
     <section class="py-16 bg-stone-700 border-t border-stone-800" id="gallery">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,6 +449,7 @@
             </div>
         </div>
     </section>
+
     <section id="contact" class="py-20 bg-stone-50">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-xl p-8 border border-stone-200">
@@ -455,7 +458,7 @@
                     ספרו לנו מי מגיע ומה אתם מחפשים — ונעזור לכם לבחור את הפעילות המתאימה.
                 </p>
                 <div id="formStatus" class="hidden mb-6"></div>
-                <form action="https://forminit.com/f/v3chkibw8xr" method="POST" class="space-y-6" id="contactForm">
+                <form action="contactForm" class="space-y-6" id="contactForm">
                     <div>
                         <!-- שם -->
                         <div>
@@ -520,28 +523,32 @@
             </div>
         </div>
     </section>
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
+
             e.preventDefault();
 
             const form = e.target;
             const statusDiv = document.getElementById('formStatus');
             const submitBtn = document.getElementById('submitBtn');
 
-            // שליפת ערכים
             const name = document.getElementById('name').value.trim();
             const phoneInput = document.getElementById('phone');
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
+            const clientType =
+                document.querySelector('input[name="client_type"]:checked')?.value || '';
+
             let errors = [];
 
-            // 1. בדיקת שם
+            // שם
             if (!name) {
                 errors.push('נא להזין שם');
             }
 
-            // 2. בדיקת טלפון ישראלי
+            // טלפון
             let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
 
             const phoneRegex = /^0\d{9}$/;
@@ -549,34 +556,31 @@
             if (!phoneRegex.test(phone)) {
                 errors.push('נא להזין מספר טלפון ישראלי תקין (למשל: 0537399556)');
             } else {
-                // המרה לפורמט בינלאומי E.164
                 phone = '+972' + phone.substring(1);
-
-                // הערך הזה הוא זה שיישלח ל-Forminit
-                phoneInput.value = phone;
             }
 
-            // 3. בדיקת אימייל
+            // אימייל
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!email || !emailRegex.test(email)) {
                 errors.push('נא להזין כתובת אימייל חוקית');
             }
 
-            // 4. בדיקת הודעה
+            // הודעה
             if (message.length < 20) {
                 errors.push('הודעה קצרה מדי. נא לפרט מעט יותר (לפחות 20 תווים)');
             }
 
-            // הצגת שגיאות
+            // שגיאות
             if (errors.length > 0) {
+
                 statusDiv.classList.remove('hidden');
 
                 statusDiv.innerHTML = `
-                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold">
-                    ${errors.join('<br>')}
-                </div>
-            `;
+            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold">
+                ${errors.join('<br>')}
+            </div>
+        `;
 
                 statusDiv.scrollIntoView({
                     behavior: 'smooth',
@@ -586,41 +590,52 @@
                 return;
             }
 
-            // הכול תקין
+            // שליחה
             statusDiv.classList.add('hidden');
 
             submitBtn.disabled = true;
             submitBtn.textContent = 'שולח פנייה...';
 
             try {
-                const response = await fetch(form.action, {
+
+                const response = await fetch('http://localhost:3000/api/contact', {
+
                     method: 'POST',
-                    body: new FormData(form),
+
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+
+                    body: JSON.stringify({
+                        name,
+                        phone,
+                        email,
+                        clientType,
+                        message
+                    })
                 });
 
-                if (response.ok) {
+                const data = await response.json();
 
-                    statusDiv.classList.remove('hidden');
-
-                    statusDiv.innerHTML = `
-                    <div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">
-                        תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.
-                    </div>
-                `;
-
-                    form.reset();
-
-                    statusDiv.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-
-                } else {
-                    throw new Error('Form submission failed');
+                if (!response.ok || !data.ok) {
+                    throw new Error(data.error || 'שליחת הטופס נכשלה');
                 }
+
+                statusDiv.classList.remove('hidden');
+
+                statusDiv.innerHTML = `
+            <div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">
+                תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.
+            </div>
+        `;
+
+                form.reset();
+
+                statusDiv.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
 
             } catch (error) {
 
@@ -629,10 +644,10 @@
                 statusDiv.classList.remove('hidden');
 
                 statusDiv.innerHTML = `
-                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">
-                    אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.
-                </div>
-            `;
+            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">
+                אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.
+            </div>
+        `;
 
             } finally {
 
