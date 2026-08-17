@@ -459,6 +459,12 @@
                 </p>
                 <div id="formStatus" class="hidden mb-6"></div>
                 <form action="contactForm" class="space-y-6" id="contactForm">
+                    <input type="hidden" id="formStartedAt" name="formStartedAt">
+                    <!-- Honeypot - must remain empty -->
+                    <div class="hidden" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div>
                         <!-- שם -->
                         <div>
@@ -532,56 +538,41 @@
             const form = e.target;
             const statusDiv = document.getElementById('formStatus');
             const submitBtn = document.getElementById('submitBtn');
-
             const name = document.getElementById('name').value.trim();
             const phoneInput = document.getElementById('phone');
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
-
             const clientType =
                 document.querySelector('input[name="client_type"]:checked')?.value || '';
-
             let errors = [];
-
             // שם
             if (!name) {
                 errors.push('נא להזין שם');
             }
-
             // טלפון
             let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
-
             const phoneRegex = /^0\d{9}$/;
-
             if (!phoneRegex.test(phone)) {
                 errors.push('נא להזין מספר טלפון ישראלי תקין (למשל: 0537399556)');
             } else {
                 phone = '+972' + phone.substring(1);
             }
-
             // אימייל
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
             if (!email || !emailRegex.test(email)) {
                 errors.push('נא להזין כתובת אימייל חוקית');
             }
-
             // הודעה
             if (message.length < 20) {
                 errors.push('הודעה קצרה מדי. נא לפרט מעט יותר (לפחות 20 תווים)');
             }
-
             // שגיאות
             if (errors.length > 0) {
-
                 statusDiv.classList.remove('hidden');
-
                 statusDiv.innerHTML = `
             <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold">
                 ${errors.join('<br>')}
-            </div>
-        `;
-
+            </div>        `;
                 statusDiv.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
@@ -589,24 +580,16 @@
 
                 return;
             }
-
-            // שליחה
             statusDiv.classList.add('hidden');
-
             submitBtn.disabled = true;
             submitBtn.textContent = 'שולח פנייה...';
-
             try {
-
                 const response = await fetch('http://localhost:3000/api/contact', {
-
                     method: 'POST',
-
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-
                     body: JSON.stringify({
                         name,
                         phone,
@@ -615,45 +598,33 @@
                         message
                     })
                 });
-
                 const data = await response.json();
-
                 if (!response.ok || !data.ok) {
                     throw new Error(data.error || 'שליחת הטופס נכשלה');
                 }
-
                 statusDiv.classList.remove('hidden');
-
                 statusDiv.innerHTML = `
             <div class="p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 font-semibold text-center">
                 תודה! הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.
             </div>
         `;
-
                 form.reset();
-
                 statusDiv.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
                 });
 
             } catch (error) {
-
                 console.error('Form submission error:', error);
-
                 statusDiv.classList.remove('hidden');
-
                 statusDiv.innerHTML = `
             <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200 font-semibold text-center">
                 אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.
             </div>
         `;
-
             } finally {
-
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'שלחו פנייה';
-
             }
         });
     </script>
@@ -678,6 +649,7 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        document.getElementById('formStartedAt').value = Date.now();
     </script>
 </body>
 
