@@ -463,12 +463,14 @@
                     },
 
                     body: JSON.stringify({
-                        name,
-                        phone,
-                        email,
-                        clientType,
-                        message
-                    })
+    name,
+    phone,
+    email,
+    clientType,
+    message,
+    website: document.getElementById('website').value,
+    formStartedAt: document.getElementById('formStartedAt').value
+})
                 });
 
                 const data = await response.json();
