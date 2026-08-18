@@ -387,14 +387,13 @@
             const form = e.target;
             const statusDiv = document.getElementById('formStatus');
             const submitBtn = document.getElementById('submitBtn');
-
             const name = document.getElementById('name').value.trim();
             const phoneInput = document.getElementById('phone');
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
-
-            const clientType =
-                document.querySelector('input[name="client_type"]:checked')?.value || '';
+            const clientType = document.querySelector('input[name="client_type"]:checked')?.value || '';
+            const website = document.getElementById('website').value.trim();
+            const formStartedAt = document.getElementById('formStartedAt').value;
 
             let errors = [];
 
@@ -409,10 +408,10 @@
             const phoneRegex = /^0\d{9}$/;
 
             if (!phoneRegex.test(phone)) {
-                errors.push('Please enter a valid Israeli phone number (e.g. 0537399556)');
+                errors.push('Please enter a valid phone number');
             } else {
                 // Convert to international E.164 format
-                phone = '+972' + phone.substring(1);
+                phone = phone.substring(1);
             }
 
             // Email
