@@ -408,10 +408,10 @@
             const phoneRegex = /^0\d{9}$/;
 
             if (!phoneRegex.test(phone)) {
-                errors.push('Please enter a valid phone number');
+                errors.push('Please enter a valid Israeli phone number (e.g. 0537399556)');
             } else {
                 // Convert to international E.164 format
-                phone = phone.substring(1);
+                phone = '+972' + phone.substring(1);
             }
 
             // Email

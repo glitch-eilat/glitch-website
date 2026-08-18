@@ -555,9 +555,9 @@
             let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
             const phoneRegex = /^0\d{9}$/;
             if (!phoneRegex.test(phone)) {
-                errors.push('נא להזין מספר טלפון תקין');
+                errors.push('נא להזין מספר טלפון ישראלי תקין');
             } else {
-                phone = phone.substring(1);
+                phone = '+972' + phone.substring(1);
             }
             // אימייל
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
