@@ -638,9 +638,8 @@
             // Send to backend
             // --------------------------------------------------
 
-            try {
-
-                const response = await fetch(
+            async function sendContactRequest() {
+                return fetch(
                     'https://glitch-backend-vyhm.onrender.com/api/contact',
                     {
                         method: 'POST',
@@ -661,6 +660,28 @@
                         })
                     }
                 );
+            }
+
+            try {
+
+                let response;
+
+                try {
+                    // ניסיון ראשון
+                    response = await sendContactRequest();
+                } catch (firstError) {
+
+                    console.warn(
+                        'First contact request failed. Retrying in 5 seconds...',
+                        firstError
+                    );
+
+                    // המתנה של 5 שניות כדי לאפשר ל-Render להתעורר
+                    await new Promise(resolve => setTimeout(resolve, 10000));
+
+                    // ניסיון שני
+                    response = await sendContactRequest();
+                }
 
                 const data = await response.json();
 

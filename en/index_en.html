@@ -467,24 +467,50 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
+            async function sendContactRequest() {
+                return fetch(
+                    'https://glitch-backend-vyhm.onrender.com/api/contact',
+                    {
+                        method: 'POST',
+
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+
+                        body: JSON.stringify({
+                            name,
+                            phone,
+                            email,
+                            clientType,
+                            message,
+                            website,
+                            formStartedAt
+                        })
+                    }
+                );
+            }
+
             try {
 
-                const response = await fetch('https://glitch-backend-vyhm.onrender.com/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name,
-                        phone,
-                        email,
-                        clientType,
-                        message,
-                        website,
-                        formStartedAt
-                    })
-                });
+                let response;
+
+                try {
+                    // ניסיון ראשון
+                    response = await sendContactRequest();
+                } catch (firstError) {
+
+                    console.warn(
+                        'First contact request failed. Retrying in 5 seconds...',
+                        firstError
+                    );
+
+                    // המתנה של 5 שניות כדי לאפשר ל-Render להתעורר
+                    await new Promise(resolve => setTimeout(resolve, 10000));
+
+                    // ניסיון שני
+                    response = await sendContactRequest();
+                }
 
                 const data = await response.json();
 
