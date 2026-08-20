@@ -574,20 +574,14 @@
             let phone =
                 phoneInput.value.trim().replace(/[\s-]/g, '');
 
-            const phoneRegex = /^0\d{9}$/;
+            const phoneRegex = /^05\d{8}$/;
 
             if (!phoneRegex.test(phone)) {
 
                 errors.push(
-                    'נא להזין מספר טלפון ישראלי תקין (למשל: 0537399556)'
+                    'נא להזין מספר טלפון נייד ישראלי תקין)'
                 );
-
-            } else {
-
-                // Convert Israeli number to E.164 format
-                phone = '+972' + phone.substring(1);
             }
-
             // --------------------------------------------------
             // Email
             // --------------------------------------------------
