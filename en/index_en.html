@@ -409,13 +409,15 @@
             const formStartedAt = document.getElementById('formStartedAt').value;
 
             let errors = [];
-
+            // --------------------------------------------------
             // Name
+            // --------------------------------------------------
             if (!name) {
                 errors.push('Please enter your name');
             }
-
+            // --------------------------------------------------
             // Phone
+            // --------------------------------------------------
             let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
 
             const phoneRegex = /^05\d{8}$/;
@@ -423,20 +425,23 @@
             if (!phoneRegex.test(phone)) {
                 errors.push('Please enter a valid Israeli phone number');
             }
-
+            // --------------------------------------------------
             // Email
+            // --------------------------------------------------
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!email || !emailRegex.test(email)) {
                 errors.push('Please enter a valid email address');
             }
-
+            // --------------------------------------------------
             // Message
+            // --------------------------------------------------
             if (message.length < 20) {
                 errors.push('Message is too short. Please provide at least 20 characters');
             }
-
+            // --------------------------------------------------
             // Errors
+            // --------------------------------------------------
             if (errors.length > 0) {
 
                 statusDiv.classList.remove('hidden');
@@ -454,8 +459,9 @@
 
                 return;
             }
-
+            // --------------------------------------------------
             // Send
+            // --------------------------------------------------
             statusDiv.classList.add('hidden');
 
             submitBtn.disabled = true;

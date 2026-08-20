@@ -572,15 +572,14 @@
             // Phone
             // --------------------------------------------------
 
-            let phone =
-                phoneInput.value.trim().replace(/[\s-]/g, '');
+            let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
 
             const phoneRegex = /^05\d{8}$/;
 
             if (!phoneRegex.test(phone)) {
 
                 errors.push(
-                    'נא להזין מספר טלפון נייד ישראלי תקין)'
+                    'נא להזין מספר טלפון נייד ישראלי תקין'
                 );
             }
             // --------------------------------------------------
