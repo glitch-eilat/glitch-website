@@ -6,6 +6,7 @@
     <link rel="alternate" hreflang="he" href="https://www.glitch.co.il/index.html">
     <link rel="alternate" hreflang="en" href="https://www.glitch.co.il/en/index_en.html">
     <link rel="alternate" hreflang="x-default" href="https://www.glitch.co.il/index.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glitch Eilat | Rappelling, Desert Adventures & Team Building</title>
@@ -411,14 +412,11 @@
             // Phone
             let phone = phoneInput.value.trim().replace(/[\s-]/g, '');
 
-            const phoneRegex = /^0\d{9}$/;
+            const phoneRegex = /^05\d{8}$/;
 
             if (!phoneRegex.test(phone)) {
                 errors.push('Please enter a valid Israeli phone number');
-            } else {
-                // Convert to international E.164 format
-                phone = '+972' + phone.substring(1);
-            }
+            } 
 
             // Email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
