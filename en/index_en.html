@@ -316,7 +316,13 @@
                 <div id="formStatus" class="hidden mb-6"></div>
 
                 <form action="contactForm" class="space-y-6" id="contactForm">
+                    <input type="hidden" id="formStartedAt" name="formStartedAt">
 
+                    <!-- Honeypot - must remain empty -->
+                    <div class="hidden" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div>
                         <!-- שם -->
                         <div>
@@ -416,7 +422,7 @@
 
             if (!phoneRegex.test(phone)) {
                 errors.push('Please enter a valid Israeli phone number');
-            } 
+            }
 
             // Email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -469,8 +475,8 @@
                         email,
                         clientType,
                         message,
-                        website: document.getElementById('website').value,
-                        formStartedAt: document.getElementById('formStartedAt').value
+                        website,
+                        formStartedAt
                     })
                 });
 
@@ -490,7 +496,7 @@
             `;
 
                 form.reset();
-
+                document.getElementById('formStartedAt').value = Date.now();
                 statusDiv.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
@@ -535,6 +541,8 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        document.getElementById('formStartedAt').value = Date.now();
     </script>
 </body>
 
